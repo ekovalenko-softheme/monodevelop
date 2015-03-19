@@ -272,9 +272,7 @@ namespace MonoDevelop.Projects.Formats.MSBuild
 			//determine the file format
 			MSBuildFileFormat format = null;
 			if (expectedFormat != null) {
-				if (p.ToolsVersion != expectedFormat.ToolsVersion) {
-					monitor.ReportWarning (GettextCatalog.GetString ("Project '{0}' has different ToolsVersion than the containing solution.", Path.GetFileNameWithoutExtension (fileName)));
-				} else {
+				if (p.ToolsVersion == expectedFormat.ToolsVersion) {
 					format = expectedFormat;
 				}
 			}

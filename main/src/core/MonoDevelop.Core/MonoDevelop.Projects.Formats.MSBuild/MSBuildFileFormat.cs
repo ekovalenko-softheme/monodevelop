@@ -263,6 +263,7 @@ namespace MonoDevelop.Projects.Formats.MSBuild
 			case "4.0":
 				return new MSBuildFileFormatVS10 ();
 			case "4.5":
+			case "12.0":
 				return new MSBuildFileFormatVS12 ();
 			}
 			throw new Exception ("Unknown ToolsVersion '" + toolsVersion + "'");
@@ -345,7 +346,7 @@ namespace MonoDevelop.Projects.Formats.MSBuild
 	class MSBuildFileFormatVS12: MSBuildFileFormat
 	{
 		public const string Version = "12.0.0";
-		const string toolsVersion = "4.0";
+		const string toolsVersion = "12.0";
 		const string slnVersion = "12.00";
 		const string productComment = "Visual Studio 2012";
 		static TargetFrameworkMoniker[] frameworkVersions = {
@@ -375,5 +376,4 @@ namespace MonoDevelop.Projects.Formats.MSBuild
 			return version == "11.00" || version == "12.00";
 		}
 	}
-
 }
